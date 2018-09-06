@@ -8,11 +8,12 @@ import { MediaItemService} from '../media-item.service';
 })
 export class MediaItemListComponent implements OnInit {
   mediaItems;
-  medium;
+  medium = '';
 
   constructor(private mediaItemService: MediaItemService) { }
 
   ngOnInit() {
+    this.getMediaItems(this.medium);
   }
 
   getMediaItems(medium) {

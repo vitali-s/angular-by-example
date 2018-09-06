@@ -30,8 +30,13 @@ export class MediaItemFormComponent implements OnInit {
   }
 
   onSubmit(mediaItem) {
-    this.mediaItemService.add(mediaItem).subscribe();
+    this.mediaItemService
+      .add(mediaItem)
+      .subscribe(() => {
+        // update items list
+      });
   }
+
 
   yearValidator(control) {
     if (control.value.trim().length === 0) {

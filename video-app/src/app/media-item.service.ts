@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import 'rxjs/add/operator/do';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,7 @@ export class MediaItemService {
         medium: medium
       }
     };
+
     return this.http.get<MediaItemsResponse>('mediaitems', getOptions).pipe(
       map((response: MediaItemsResponse) => {
         return response.mediaItems;
