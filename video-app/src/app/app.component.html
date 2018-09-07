@@ -1,3 +1,14 @@
+<nav>
+  <a [routerLink]="['/']" >
+    All
+  </a>
+  <a [routerLink]="['/Movies']" >
+    Movies
+  </a>
+  <a [routerLink]="['/Series']" >
+    Series
+  </a>
+</nav>
 <section>
   <header>
     <h1>Media Watch List</h1>
@@ -5,5 +16,5 @@
       Keeping track of the media I want to watch.
     </p>
   </header>
-  <app-media-item-list></app-media-item-list>
+  <router-outlet></router-outlet>
 </section>
